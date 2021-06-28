@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/6bdb661713.js" crossorigin="anonymous"></script>
+    <script defer src="public/js/index.js" type="module"></script>
+    <title>Fisheye</title>
+  </head>
+  <body>
+    <header><img class="logo" src="public/img/logo.png" alt="Logo Les petits plats" /></header>
+    <main>
+      <div class="search__box">
+        <input
+          type="search"
+          class="search__bar"
+          placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+        />
+        <span class="fas fa-search search__icon"></span>
+      </div>
+
+      <div class="tag">
+        <p class="tag__element ingredients">Coco<span class="far fa-times-circle tag__icon"></span></p>
+        <p class="tag__element ingredients">Viande hachée<span class="far fa-times-circle tag__icon"></span></p>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropdown__element ingredients">
+          <div class="dropdown__search-box">
+            <input type="search" name="" id="" class="dropdown__search" placeholder="Ingrédients" />
+            <span class="fas fa-chevron-down dropdown__icon"></span>
+          </div>
+          <p class="dropdown__search-result ingredients">khhohoojojohjohohohohohocccccccccho</p>
+        </div>
+
+        <div class="dropdown__element appliances">
+          <div class="dropdown__search-box">
+            <input type="search" name="" id="" class="dropdown__search" placeholder="Appareil" />
+            <span class="fas fa-chevron-down dropdown__icon"></span>
+          </div>
+          <p class="dropdown__search-result appliances">khhoho</p>
+        </div>
+
+        <div class="dropdown__element ustensils">
+          <div class="dropdown__search-box">
+            <input type="search" name="" id="" class="dropdown__search" placeholder="Ustensiles" />
+            <span class="fas fa-chevron-down dropdown__icon"></span>
+          </div>
+          <p class="dropdown__search-result ustensils">khhoho</p>
+        </div>
+      </div>
+
+      <div class="recipes">
+        <div class="recipes__card">
+          <div class="recipes__img"></div>
+          <div class="recipes__txt-container">
+            <div class="recipes__heading">
+              <h2 class="recipes__title">Limonade de coco</h2>
+              <div class="recipes__time">
+                <span class="far fa-clock recipes__icon"></span>
+                <p>10 min</p>
+              </div>
+            </div>
+            <div class="recipes__notice-container">
+              <div class="recipes__notice-block">
+                <p class="recipes__ingredients">Thon : <span class="recipes__ingredients-unit">1</span></p>
+              </div>
+              <div class="recipes__notice-block">
+                <p class="recipes__notice">
+                  Découper le thon en dés, mettre dans un plat et recouvrir de jus de citron vert (mieux vaut prendre un
+                  plat large et peu profond). Laisser reposer au réfrigérateur au moins 2 heures.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
