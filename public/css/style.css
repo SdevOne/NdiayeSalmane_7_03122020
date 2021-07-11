@@ -205,7 +205,6 @@ li {
   text-align: left;
   overflow-x: scroll;
   overflow-y: hidden;
-  border: solid;
 }
 .dropdown-list__item {
   padding: 1rem 0;
@@ -216,7 +215,7 @@ li {
 }
 
 .recipes {
-  margin-top: 2.5rem;
+  margin-top: 8rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

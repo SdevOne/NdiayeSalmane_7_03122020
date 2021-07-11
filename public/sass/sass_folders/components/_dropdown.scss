@@ -134,11 +134,9 @@
     text-align: left;
     overflow-x: scroll;
     overflow-y: hidden;
-    border: solid;
   }
 
   &__item {
-    //margin-right: 10.6rem;
     padding: 1rem 0;
     font-family: $primary-font;
     &:hover {
