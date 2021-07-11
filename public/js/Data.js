@@ -181,4 +181,43 @@ export class Data {
     const filtered = recipeArray.filter((recipe) => this.filterEmpty(recipe));
     this.refresh(filtered);
   }
+  /**
+   * filtre les résultats via la barre de recherche
+   */
+  static async refreshBySearchbar() {
+    const data = await this.getData();
+    const searchbar = document.querySelector(".search__bar");
+    const recipesContainer = document.querySelector(".recipes");
+    const allFilters = [
+      this.filtersIngredients(data.recipes),
+      this.filtersAppliances(data.recipes),
+      this.filtersUstensils(data.recipes),
+    ];
+    searchbar.addEventListener("keyup", (e) => {
+      const search = e.target.value;
+      if (search.length < 3) {
+        this.refreshButtons(allFilters);
+        recipesContainer.innerHTML = "";
+        for (const recipe of data.recipes) {
+          Recipes.all(recipe);
+        }
+      } else if (search.length >= 3) {
+        recipesContainer.innerHTML = "";
+        const recipes = data.recipes.filter((recipe) => {
+          return (
+            recipe.name.toLowerCase().includes(search) ||
+            recipe.description.toLowerCase().includes(search) ||
+            recipe.ingredients.forEach((item) => {
+              item.ingredient.toLowerCase().includes(search);
+            })
+          );
+        });
+        if (recipes.length === 0) {
+          recipesContainer.innerHTML =
+            "<p class='recipes__error'>Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.</p>";
+        }
+        this.refresh(recipes);
+      }
+    });
+  }
 }
