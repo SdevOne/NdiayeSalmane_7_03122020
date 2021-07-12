@@ -193,6 +193,13 @@ export class Data {
       this.filtersAppliances(data.recipes),
       this.filtersUstensils(data.recipes),
     ];
+    searchbar.addEventListener("search", (e) => {
+      this.refreshButtons(allFilters);
+      recipesContainer.innerHTML = "";
+      for (const recipe of data.recipes) {
+        Recipes.all(recipe);
+      }
+    });
     searchbar.addEventListener("keyup", (e) => {
       const search = e.target.value;
       if (search.length < 3) {
