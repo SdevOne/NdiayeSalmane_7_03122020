@@ -127,7 +127,7 @@ export class Data {
   }
 
   /**
-   *
+   * vide les éléments undefined d'un array
    * @param {Object} recipe
    * @returns {Object}
    */
