@@ -1,0 +1,27 @@
+@import "./typography";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $primary-font;
+  font-size: 62.5%;
+  line-height: 1.6rem;
+}
+
+body {
+  margin: 4.5rem 10rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
