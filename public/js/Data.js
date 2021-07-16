@@ -145,6 +145,11 @@ export class Data {
     const recipesContainer = document.querySelector(".recipes");
     const recipeArray = data.recipes;
     recipesContainer.innerHTML = "";
+    const searchbar = document.querySelector(".search__bar");
+    if (searchbar.value !== "") {
+      tags.push(searchbar.value);
+    }
+    console.log(tags);
     for (let k = 0; k < tags.length; k++) {
       const tag = tags[k].toLowerCase();
       for (let i = 0; i < recipeArray.length; i++) {
@@ -194,10 +199,20 @@ export class Data {
       this.filtersUstensils(data.recipes),
     ];
     searchbar.addEventListener("search", (e) => {
-      this.refreshButtons(allFilters);
-      recipesContainer.innerHTML = "";
-      for (const recipe of data.recipes) {
-        Recipes.all(recipe);
+      const tags = document.querySelectorAll(".tag__element");
+      const tagsList = [];
+      tags.forEach((tag) => {
+        tagsList.push(tag.textContent);
+      });
+      console.log(tags);
+      if (tagsList.length === 0) {
+        this.refreshButtons(allFilters);
+        recipesContainer.innerHTML = "";
+        for (const recipe of data.recipes) {
+          Recipes.all(recipe);
+        }
+      } else {
+        this.refreshByTag(tagsList);
       }
     });
     searchbar.addEventListener("keyup", (e) => {
