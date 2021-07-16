@@ -197,10 +197,19 @@ export class Data {
     const leftSide = data.recipes.slice(0, middleIndex);
     const rightSide = data.recipes.slice(middleIndex);
     searchbar.addEventListener("search", (e) => {
-      this.refreshButtons(allFilters);
-      recipesContainer.innerHTML = "";
-      for (const recipe of data.recipes) {
-        Recipes.all(recipe);
+      const tags = document.querySelectorAll(".tag__element");
+      const tagsList = [];
+      tags.forEach((tag) => {
+        tagsList.push(tag.textContent);
+      });
+      if (tagsList.length === 0) {
+        this.refreshButtons(allFilters);
+        recipesContainer.innerHTML = "";
+        for (const recipe of data.recipes) {
+          Recipes.all(recipe);
+        }
+      } else {
+        this.refreshByTag(tagsList);
       }
     });
     searchbar.addEventListener("keyup", (e) => {
