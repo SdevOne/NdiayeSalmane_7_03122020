@@ -291,6 +291,9 @@ li {
   font-weight: 400;
   line-height: 1.5rem;
 }
+.recipes__error {
+  font-size: 1.8rem;
+}
 
 header {
   display: flex;
