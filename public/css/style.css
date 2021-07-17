@@ -275,10 +275,13 @@ li {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.recipes__notice-block:nth-child(2) {
+  height: 12rem;
+}
 .recipes__ingredients {
   font-weight: 700;
 }
-.recipes__ingredients-unit {
+.recipes__ingredients-quantity, .recipes__ingredients-unit {
   font-weight: 400;
 }
 .recipes__notice {
@@ -286,7 +289,7 @@ li {
   height: 100%;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  line-height: 1.2rem;
+  line-height: 1.5rem;
 }
 
 header {
